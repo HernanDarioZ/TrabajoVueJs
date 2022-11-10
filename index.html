@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>1ejercicio.V js</title>
+</head>
+<body>
+    <section id="app">
+      Aqui va lo que es dinamico desde js (vueJs)
+      <h1>Tu nombre es: {{name}} y mio edad es de : {{age}}</h1>
+     ------------------------------------------------------------
+      <h2 v-text="name"></h2>
+      <h2 v-text="age"></h2>
+      // PODEMOS ENCONTRAR DOS MANERAS DE LLAMAR EN 
+      EL AMBITO UN ES CON LA INTERPOLACION QUE ES
+      LOS CORCHETES DOBLES Y CON EL v-text
+
+      -----------------------------------------------------------
+      <h1>Directiva</h1>  </<code>v-html</code><h1>
+        <h3>Trae el elemento creado desde el Js </h3>
+       <p v-html="Padre"></p>
+
+       <h1>Diractiva</h1>  </<code>v-html</code><h1>
+        <h3>Trae el elemento creado desde el Js </h3>
+       <p v-html="Madre"></p>
+
+       --------------------------------------------------------------------------
+       <h1>Directiva</h1>  </<code>v-show</code><h1>
+        <h3>Hace una compararico o una condicional  </h3>
+       <p v-show="age>18">Eres mayor de edad</p>
+       <p v-show="age<18">Eres menor de edad</p>
+
+       <h1>Directiva</h1>  </<code>v-show</code><h1>
+        <h3>Hace una compararico o una condicional  </h3>
+       <p v-show="Viodivercidad<2"> Esta en el segundo puesto como el pais mas viodiverso del mundo</p>
+       <p v-show="Viodivercidad>2">No es el pais mas viodiverso del  mundo</p>
+       
+       <h1>Directiva</h1>  </<code>v-show</code><h1>
+        <h3>Hace una compararico o una condicional  </h3>
+       <p v-show="NumeroHabitantes<12.000"> Es un pais muy poblado </p>
+       <p v-show="NumeroHabitantes>12.000">Es un pais bastante poblado </p>
+      ------------------------------------------------------------------------------
+      <h1>Directiva</h1>  </<code>v-if</code><h1>
+        <h3>Ciclo condicional tienes mas alcanze  </h3>
+       <h3 v-if="Genero=='M'">Tu eres un hombre</h3>
+       <h3 v-else-if="Genero=='F'">Eres una dama</h3>
+       <h3 v-else-if="Genero=='O'">Tu decides</h3>
+       <h3 v-else>No Identificado</h3>
+
+       <h1>Directiva</h1>  </<code>v-if</code><h1>
+        <h3>Ciclo condicional tienes mas alcanze  </h3>
+       <h3 v-if="Moneda=='Peso'">Esta moneda pertenece a colombia</h3>
+       <h3 v-else-if="Moneda=='Dolar'">Esta moneda pertenece a estados unidos</h3>
+       <h3 v-else-if="Moneda=='Euro'">Esta moneda pertenece a españa </h3>
+       <h3 v-else>Esta moneda no esta identificada </h3>
+
+       <h1>Directiva</h1>  </<code>v-if</code><h1>
+        <h3>Ciclo condicional tienes mas alcanze  </h3>
+       <h3 v-if="Rios=='Nilo'">Es uo de lo rios mas largos de africa </h3>
+       <h3 v-else-if="Rios=='Amazonas'">Es el segundo  rio mas largo de colombia </h3>
+       <h3 v-else-if="Rios=='Hiuston'">Es el segundo rio mas largo de estados unidos</h3>
+       <h3 v-else>Este rio no se detecta dentro de la geografia del mundo  </h3>
+    -----------------------------------------------------------------------------------------------------
+    <h1>Directiva</h1>  </<code>v-for</code><h1>
+        <h3>Bucle </h3>
+       <h3 v-for="Animal, index in Animals" :key="index">
+       {{index}}.{{Animal}}
+
+       <h1>Directiva</h1>  </<code>v-for</code><h1>
+        <h3>Bucle </h3>
+       <h3 v-for="Fruta, index in Frutas" :key="index">
+       {{index}}.{{Fruta}}
+
+       <h1>Directiva</h1>  </<code>v-for</code><h1>
+        <h3>Bucle </h3>
+       <h3 v-for="Planeta, index in Planetas" :key="index">
+       {{index}}.{{Planeta}}
+
+        -------------------------------------------------------------------------------------------
+        <h1>Directiva</h1>  </<code>v-on</code><h1>
+            <h3>Hace alguna accion cuando se emplean los eventos</h3>
+           <button v-on:click="Counter += 1 ">Agregar 1</button>
+           <button v-on:click="Counter = 0">Reset</button>
+           <p>Se ha hecho <b>{{Counter}}</b>Clicks</p>
+
+           <h1>Directiva</h1>  </<code>v-on</code><h1>
+            <h3>Hace alguna accion cuando se emplean los eventos</h3>
+           <button v-on:click="Exportador += 2 ">Agregar 1</button>
+           <button v-on:click="Exportador = 0">Reset</button>
+           <p>Se ha hecho <b>{{Exportador}}</b>Clicks</p>
+
+           <h1>Directiva</h1>  </<code>v-on</code><h1>
+            <h3>Hace alguna accion cuando se emplean los eventos</h3>
+           <button v-on:dblclick="Dobleclik += 2 ">Agregar 1</button>
+           <button v-on:dblclick="Dobleclik = 0">Reset</button>
+           <p>Se ha hecho <b>{{Dobleclik}}</b>Clicks</p>
+       -------------------------------------------------------------------------------------------------------------------------
+           <h1>Directiva</h1>  </<code>v-on</code><h1>    
+            <h3>llama imagenes usando dos metodos</h3>    
+            <img v-bind:src="img" v-bind:alt="alt"> // Primer metodo para llamar la imagen usando V.js  <br>
+            <img :src="img" :alt="alt">  // Segundo metodo para llamar la imagen usando V.js
+         
+            <h1>Directiva</h1>  </<code>v-on</code><h1>    
+                <h3>llama imagenes usando dos metodos</h3>    
+                <img v-bind:src="segundaimg" v-bind:alt="alt"> // Primer metodo para llamar la imagen usando V.js  <br>
+                <img :src="segundaimg" :alt="alt">  // Segundo metodo para llamar la imagen usando V.js
+        
+                <h1>Directiva</h1>  </<code>v-on</code><h1>    
+                    <h3>llama imagenes usando dos metodos</h3>    
+                    <img v-bind:src="Terceraimg" v-bind:alt="alt"> // Primer metodo para llamar la imagen usando V.js  <br>
+                    <img :src="Terceraimg" :alt="alt">  // Segundo metodo para llamar la imagen usando V.js
+           
+           
+        ---------------------------------------------------------------------------------------------------------------------------------
+        <h1> Directiva <code>V-Model</code></h1>
+        <h2>Tu nombre es: {{name}}</h2>
+
+        <label for="">Tu nombre es </label>
+        <input type="text" v-model="name">
+
+
+        <h1> Directiva <code>V-Model</code></h1>
+        <h2>Biografia: {{Biografia}}</h2>
+
+        <label for="">Biografia </label>
+        <input type="text" v-model="Biografia">
+
+        <h1> Directiva <code>V-Model</code></h1>
+        <h2>Descripcion de sofware: {{Descripciion}}</h2>
+
+        <label for="">Tu nombre es </label>
+        <input type="text" v-model="Descripciion">
+
+
+
+       
+
+                </section>
+
+    <main>
+        <h1>Productos ofrecidos</h1>
+    </main>
+
+
+    <script>
+        const hola={
+
+            // 
+            data(){
+                return{
+                    name: "Hernan dario",
+                    age: 20,
+                    apallido:"Zuñiga Hurtado",
+                    Padre: "Luis Hernan Zuñiga",
+                    Madre:"Myriam Hurtado Galarza",
+                    Viodivercidad:"1",
+                    NumeroHabitantes:"15.000",
+                    Genero:"F",
+                    Moneda:"Euro",
+                    Rios:"Hiuston",
+                    Frutas:["Naranja","Manddarina","Limon","Banana","Uva"],
+                    Animals:["Gato","Perro","Pajaro"],
+                    Planetas:["Marte","Mercurio","Jupiter","Venus","Neptuuno"],
+                    Counter:"0",
+                    Exportador: "0",
+                    Dobleclik:"0",
+                    img:"/img/2P.jpg",
+                    alt:"logo",
+                    segundaimg:"/img/4P.jpg",
+                    alt:"logo",
+                    Terceraimg:"/img/5P.webp",
+                    alt:"logo",
+                    Biografia:"",
+                    Descripciion:"Sofware"
+
+                    
+                   
+                
+
+                    
+
+                  
+                };
+            },
+        };
+        Vue.createApp(hola).mount("#app");// Crear la aplicacion y montarla para 
+    </script>
+
+    
+</body>
+</html>
